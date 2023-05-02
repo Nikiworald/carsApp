@@ -1,15 +1,15 @@
-package com.haemimont.carsapp.core.main;
+package com.haemimont.carsapp.core.customThreads;
 
 import com.haemimont.carsapp.core.model.Car;
 
 import java.util.Queue;
 
-class SingleQueueThread extends Thread {
+public class SingleThreadForQueue extends Thread {
     Queue queue;
     int param;
     int cnt;
 
-    public SingleQueueThread(Queue queue, int param, int cnt) {
+    public SingleThreadForQueue(Queue queue, int param, int cnt) {
         this.queue = queue;
         this.param = param;
         this.cnt = cnt;

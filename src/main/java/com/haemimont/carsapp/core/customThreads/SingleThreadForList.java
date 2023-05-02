@@ -1,15 +1,15 @@
-package com.haemimont.carsapp.core.main;
+package com.haemimont.carsapp.core.customThreads;
 
 import com.haemimont.carsapp.core.model.Car;
 
 import java.util.List;
 
-class SingleListThread extends Thread {
+public class SingleThreadForList extends Thread {
     List<Car> list;
     int param;
     int cnt;
 
-    public SingleListThread(List<Car> list, int param, int cnt) {
+    public SingleThreadForList(List<Car> list, int param, int cnt) {
         this.list = list;
         this.param = param;
         this.cnt = cnt;

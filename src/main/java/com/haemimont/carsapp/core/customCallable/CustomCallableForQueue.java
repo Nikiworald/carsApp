@@ -1,18 +1,18 @@
-package com.haemimont.carsapp.core.main;
+package com.haemimont.carsapp.core.customCallable;
 
 import com.haemimont.carsapp.core.model.Car;
 
 import java.util.Queue;
 import java.util.concurrent.Callable;
 
-public class CustomQueueCallable implements Callable {
+public class CustomCallableForQueue implements Callable {
     Car car;
     int param;
     double sum;
     Queue<Car> queue;
     int cnt;
 
-    public CustomQueueCallable(Queue<Car> queue, int param) {
+    public CustomCallableForQueue(Queue<Car> queue, int param) {
         this.param = param;
         this.queue = queue;
     }

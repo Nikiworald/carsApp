@@ -1,9 +1,8 @@
 package com.haemimont.carsapp.core.tools;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import com.haemimont.carsapp.core.model.Car;
+
+import java.util.*;
 
 public class ListTools {
     public static List<List> ListSpreader(List finalList, int cntOfLists) {
@@ -27,5 +26,13 @@ public class ListTools {
        }
        return listOfLists;
 
+    }
+    public static List<Car> fromHashMapToList(HashMap<Integer,Car> hashMap){
+        List<Car> list = new ArrayList<>();
+        hashMap.forEach((key, value) -> {
+            list.add(value);
+        });
+
+        return list;
     }
 }

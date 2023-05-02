@@ -29,12 +29,12 @@ public class CarMakeModel {
         return values;
     }
 
-//    public static String getRandomMake() {
-//        String make;
-//        Random random = new Random();
-//        int randomInt = random.nextInt(values.length);
-//        make = values[randomInt];
-//        return make;
-//    }
+    public static String getRandomMake() {
+        String make;
+        Random random = new Random();
+        int randomInt = random.nextInt(values.length);
+        make = values[randomInt];
+        return make;
+    }
 
 }

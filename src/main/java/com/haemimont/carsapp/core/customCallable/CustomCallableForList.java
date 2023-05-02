@@ -1,17 +1,17 @@
-package com.haemimont.carsapp.core.main;
+package com.haemimont.carsapp.core.customCallable;
 
 import com.haemimont.carsapp.core.model.Car;
 
 import java.util.List;
 import java.util.concurrent.Callable;
 
-public class CustomListCallable implements Callable {
+public class CustomCallableForList implements Callable {
     int param;
     double sum;
     List<Car> list;
     int cnt;
 
-    public CustomListCallable(List<Car> list, int param, int cnt) {
+    public CustomCallableForList(List<Car> list, int param, int cnt) {
         this.param = param;
         this.list = list;
         this.cnt = cnt;
