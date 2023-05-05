@@ -13,6 +13,11 @@ public class Generator {
     static int maxYear = 2023;
     static double minPrice = 1000;
     static double maxPrice = 10000;
+
+    public static String[] getModels() {
+        return models;
+    }
+
     static String[] models = {"Mazda", "BMW", "Audi", "Chevrolet", "Lada", "Bugatti"};
 
     public static String getRandomModel() {

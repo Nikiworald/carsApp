@@ -36,6 +36,7 @@ public class MultiThreadCalculator implements Calculator {
                 throw new RuntimeException(e);
             }
         }
+        executorService.shutdown();
         return sum / processorCnt;
     }
 }

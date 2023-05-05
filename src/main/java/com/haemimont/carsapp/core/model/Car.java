@@ -14,4 +14,12 @@ public class Car {
     public double getPrice() {
         return price;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
 }

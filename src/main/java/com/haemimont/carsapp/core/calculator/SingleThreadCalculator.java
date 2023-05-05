@@ -18,11 +18,13 @@ public class SingleThreadCalculator implements Calculator, Callable<Double> {
     public double calculate() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<Double> future = executor.submit(this);
+        executor.shutdown();
         try {
             return future.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
+
     }
 
 
