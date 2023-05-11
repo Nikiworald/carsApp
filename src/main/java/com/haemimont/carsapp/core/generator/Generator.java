@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Generator {
-    static int minYear = 1999;
-    static int maxYear = 2023;
-    static double minPrice = 1000;
-    static double maxPrice = 10000;
+    private static final int MIN_YEAR = 1999;
+    private static final int MAX_YEAR = 2023;
+    private static final double MIN_PRICE = 1000;
+    private static final double MAX_PRICE = 10000;
 
     public static String[] getModels() {
         return models;
@@ -25,11 +25,11 @@ public class Generator {
     }
 
     public static double getRandomPrice() {
-        return ThreadLocalRandom.current().nextDouble(minPrice, maxPrice);
+        return ThreadLocalRandom.current().nextDouble(MIN_PRICE, MAX_PRICE);
     }
 
     public static int getRandomYear() {
-        return ThreadLocalRandom.current().nextInt(minYear, maxYear);
+        return ThreadLocalRandom.current().nextInt(MIN_YEAR, MAX_YEAR);
     }
 
     public static List<Car> generateCars(int cnt) {

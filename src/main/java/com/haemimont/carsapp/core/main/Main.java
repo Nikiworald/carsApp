@@ -1,13 +1,14 @@
 package com.haemimont.carsapp.core.main;
 
+import com.haemimont.carsapp.core.utils.FromListToHashMapWithNoKey;
+import com.haemimont.carsapp.core.utils.Search;
 import com.haemimont.carsapp.core.calculator.MultiThreadCalculator;
 import com.haemimont.carsapp.core.calculator.SingleThreadCalculator;
 import com.haemimont.carsapp.core.generator.Generator;
 import com.haemimont.carsapp.core.model.Car;
+import com.haemimont.carsapp.core.utils.Sort;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,12 +35,21 @@ public class Main {
         System.out.println("(MultiThread) average price:" + new MultiThreadCalculator(carList, param).calculate());
         System.out.println("(MultiThread) time to calculate:" + (System.currentTimeMillis() - timerStart) + "ms");
 
-
         timerStart = System.currentTimeMillis();
-        carList.removeIf(car -> car.getYear() != year && !car.getModel().equals(model));
-        System.out.println("Filtered " + cnt + " cars.Cars left:" + carList.size());
-        System.out.println("(SingleThread) time to filter:" + (System.currentTimeMillis() - timerStart) + "ms");
+       int result = Search.forSearch(carList,year,model);
+        System.out.println("cars found:"+result);
+        System.out.println("(forEach) time to search:" + (System.currentTimeMillis() - timerStart) + "ms");
 
+//        HashMap<Integer,Car> hashMap = FromListToHashMapWithNoKey.convert(carList);
+//        Sort.bubbleSort(hashMap,hashMap.size());
+        timerStart = System.currentTimeMillis();
+        Sort.bubbleSort(carList,carList.size());
+        System.out.println("(Sort) time to sort:" + (System.currentTimeMillis() - timerStart) + "ms");
+        timerStart=System.currentTimeMillis();
+        result = Search.binarySearchByYear(carList,year);
+        System.out.println("cars found:"+result);
+        System.out.println("(binarySearchByYear) time to search:" + (System.currentTimeMillis() - timerStart) + "ms");
 
+        System.out.println("done");
     }
 }
