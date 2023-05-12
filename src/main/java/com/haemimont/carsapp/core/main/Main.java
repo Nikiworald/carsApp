@@ -12,6 +12,11 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        SeatingStudents test = new SeatingStudents();
+        int[] arr = {12, 2, 6, 7, 11};
+
+        System.out.println(test.SeatingStudents(arr));
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter param:");
         double param = Double.parseDouble(scanner.nextLine());
@@ -36,19 +41,22 @@ public class Main {
         System.out.println("(MultiThread) time to calculate:" + (System.currentTimeMillis() - timerStart) + "ms");
 
         timerStart = System.currentTimeMillis();
+        Sort.bubbleSort(carList);
+        System.out.println("(Sort) time to sort:" + (System.currentTimeMillis() - timerStart) + "ms");
+
+
+        timerStart = System.currentTimeMillis();
        int result = Search.forSearch(carList,year,model);
-        System.out.println("cars found:"+result);
         System.out.println("(forEach) time to search:" + (System.currentTimeMillis() - timerStart) + "ms");
+        System.out.println("(forEach) cars found:"+result);
 
 //        HashMap<Integer,Car> hashMap = FromListToHashMapWithNoKey.convert(carList);
 //        Sort.bubbleSort(hashMap,hashMap.size());
-        timerStart = System.currentTimeMillis();
-        Sort.bubbleSort(carList,carList.size());
-        System.out.println("(Sort) time to sort:" + (System.currentTimeMillis() - timerStart) + "ms");
+
         timerStart=System.currentTimeMillis();
-        result = Search.binarySearchByYear(carList,year);
-        System.out.println("cars found:"+result);
-        System.out.println("(binarySearchByYear) time to search:" + (System.currentTimeMillis() - timerStart) + "ms");
+        result = Search.binarySearch(carList,year,model);
+        System.out.println("(binarySearch) time to search:" + (System.currentTimeMillis() - timerStart) + "ms");
+        System.out.println("(binarySearch)cars found:"+result);
 
         System.out.println("done");
     }

@@ -6,26 +6,26 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Sort {
-    static public void bubbleSort(List<Car> carList,int n)
+    static public void bubbleSort(List<Car> carList)
     {
-        Car tempCar1;
-        if (n == 1)                     //passes are done
-        {
-            return;
-        }
-
-        for (int i=0; i<n-1; i++)       //iteration through unsorted elements
-        {
-            if (carList.get(i).getYear() >= carList.get(i + 1).getYear())      //check if the elements are in order
-            {
-                tempCar1 = carList.get(i);
-                carList.set(i,carList.get(i+1));
-                carList.set(i+1,tempCar1);
+        Car tempCar ;
+        boolean swap = true;
+        int range = carList.size() - 1;
+        while (swap) {
+            swap = false;
+            for (int i = 0; i < range; i++) {
+                if (carList.get(i).getYear() > carList.get(i + 1).getYear()) {
+                    tempCar = carList.get(i);
+                    carList.set(i, carList.get(i + 1));
+                    carList.set(i + 1, tempCar);
+                    swap = true;
+                }
             }
+            range--;
         }
 
-        bubbleSort(carList, n-1);           //one pass done, proceed to the next
     }
+    @Deprecated//maybe useful later
     public static void bubbleSort(HashMap<Integer,Car> carHashMap,int n){
         if (n == 1)                     //passes are done
         {
