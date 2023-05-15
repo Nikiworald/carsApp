@@ -1,21 +1,21 @@
 package com.haemimont.carsapp.core.main;
 
-import com.haemimont.carsapp.core.utils.FromListToHashMapWithNoKey;
-import com.haemimont.carsapp.core.utils.Search;
 import com.haemimont.carsapp.core.calculator.MultiThreadCalculator;
 import com.haemimont.carsapp.core.calculator.SingleThreadCalculator;
 import com.haemimont.carsapp.core.generator.Generator;
 import com.haemimont.carsapp.core.model.Car;
+import com.haemimont.carsapp.core.utils.Search;
 import com.haemimont.carsapp.core.utils.Sort;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        SeatingStudents test = new SeatingStudents();
-        int[] arr = {12, 2, 6, 7, 11};
-
-        System.out.println(test.SeatingStudents(arr));
+//        SeatingStudents test = new SeatingStudents();
+//        int[] arr = {6, 4};
+//        System.out.println(test.SeatingStudents(arr));
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter param:");

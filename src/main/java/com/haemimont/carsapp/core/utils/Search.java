@@ -60,7 +60,6 @@ public class Search {
             while (car.getYear() == year) {//going from the index to the right until we reach a car with different year
                 if (car.getModel().equals(model)) {
                     cnt++;
-                    System.out.println(cnt);
                 }
                 start--;
                 car = list.get(start);
@@ -69,7 +68,7 @@ public class Search {
             car = list.get(start);
             while (car.getYear() == year) {//going from the index to the left until we reach a car with different year
                 if (car.getModel().equals(model)) {
-                    cnt++;System.out.println(cnt);
+                    cnt++;
                 }
                 start++;
                 car = list.get(start);
